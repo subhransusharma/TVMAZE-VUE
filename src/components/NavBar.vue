@@ -15,7 +15,7 @@
 
 
     <!-- Search -->
-    <div class='hidden md:block w-80'>
+    <div class='md:block w-80 pl-3'>
       <div class="relative flex items-center w-full h-12 rounded-lg bg-gray-800 overflow-hidden focus-within:border focus-within:border-gray-200">
         <div class="grid place-items-center h-full w-12 text-gray-500">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
