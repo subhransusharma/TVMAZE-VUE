@@ -10,7 +10,7 @@ describe("test cases for show card component", () => {
   });
 
   it("should render markup correctly", () => {
-    const average = wrapper.find(".bg-cover");
+    const average = wrapper.find(".average");
     expect(average.exists()).toBeTruthy();
   });
 });

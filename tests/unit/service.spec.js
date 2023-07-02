@@ -36,6 +36,7 @@ describe("test cases for search service", () => {
 
   it("should return showDetails correctly", async () => {
     const response = await shows.getShowDetails(id);
+    console.log("res", response);
     expect(response.data.name).toEqual(mockDetails.name);
   });
 });
