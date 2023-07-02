@@ -70,6 +70,10 @@ export default {
           name: 'Drama',
           emoji: '🎭',
         },
+        {
+          name: 'Sports',
+          emoji: '⚽️',
+        },
       ],
       shows: [],
       query: '',

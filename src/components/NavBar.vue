@@ -18,7 +18,7 @@
 
 
     <!-- Search -->
-    <div class='md:block w-70'>
+    <div class='md:block w-70 pl-4'>
       <div
         class="relative flex items-center w-full h-12 rounded-lg bg-gray-800 overflow-hidden focus-within:border focus-within:border-gray-200">
         <div class="grid place-items-center h-full w-12 text-gray-500">
