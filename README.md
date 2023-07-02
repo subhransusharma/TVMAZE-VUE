@@ -30,10 +30,15 @@ API - https://api.tvmaze.com
 
 ## Screenshots
 
-![Alt text](image.png)
+List Page
+![image](https://github.com/subhransusharma/TVMAZE-VUE/assets/14253342/6cdee2e5-88e9-4cb0-b336-c8d811c4c362)
 
-![Alt text](image-1.png)
+Details Page
+![image](https://github.com/subhransusharma/TVMAZE-VUE/assets/14253342/af8880be-06af-4201-bcfc-31a6c1e5bfc8)
 
-![Alt text](image-2.png)
+Mobile View
+![image](https://github.com/subhransusharma/TVMAZE-VUE/assets/14253342/f87dd83d-5715-41b6-b867-9a2a488e8a89)
 
-![Alt text](image-3.png)
+![image](https://github.com/subhransusharma/TVMAZE-VUE/assets/14253342/d19806a2-9cf2-4830-80f7-33effaa272de)
+
+
