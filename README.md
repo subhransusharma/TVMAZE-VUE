@@ -21,12 +21,24 @@ Start the development server
 
 `$ npm run serve`
 
+Run unit test cases
+
+`$ npm run test:unit`
+
 ## Built With
 
 VueJS (2.6.11) - JavaScript framework for building user interfaces
 vue-router (3.6.5) - Router for Vue js
 tailwindcss - Open source CSS framework which provides utility CSS classes
 API - https://api.tvmaze.com
+
+Initially when I started the application, I thought of developing it using Vue 2, vue-router for routing, tailwind css for styling jest and vue-util-test for testing.
+As I progressed I started the application in a scratch pad developing the application in pages.Later I moved the components to various smaller components.
+
+## Areas of Improvement
+
+The component design should have been made using atoms/molecules/organism and pages strucuture , segregating each smaller components to atoms and molecules and which would be used by organism and pages.
+
 
 ## Screenshots
 
