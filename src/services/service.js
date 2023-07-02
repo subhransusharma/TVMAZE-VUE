@@ -1,6 +1,8 @@
 import axios from "axios";
+import router from "../routes";
 
 const BASE_URL = "https://api.tvmaze.com";
+const errorPath = "/error";
 
 export async function getAllShows() {
   let response;
@@ -9,6 +11,7 @@ export async function getAllShows() {
     return response;
   } catch (error) {
     response = error.response;
+    router.push(errorPath);
     throw new Error("Unable to reach the server");
   }
 }
@@ -20,6 +23,7 @@ export async function getAllSearchedShows(query) {
     return response;
   } catch (error) {
     response = error.response;
+    router.push(errorPath);
     throw new Error("Unable to reach the server");
   }
 }
@@ -33,6 +37,7 @@ export async function getShowDetails(id) {
     return response;
   } catch (error) {
     response = error.response;
+    router.push(errorPath);
     throw new Error("Unable to reach the server");
   }
 }

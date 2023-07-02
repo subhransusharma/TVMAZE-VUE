@@ -23,6 +23,6 @@ describe("test cases for show details page", () => {
   });
 
   it("should show details of the show", async () => {
-    console.log(wrapper);
+    console.log(wrapper.vm);
   });
 });
