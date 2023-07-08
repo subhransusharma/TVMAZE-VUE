@@ -1,20 +1,23 @@
 <template>
   <div>
+
     <div v-if="fetchingShowDetail" class="h-screen flex items-center justify-center">
       <loader></loader>
     </div>
 
-    <div v-else class="mx-auto max-w-7xl pb-24 pt-16">
+
+    <div v-else class="mx-auto max-w-7xl  pb-24 pt-16">
       <div class="sm:flex sm:space-x-10">
         <div class="sm:max-w-xs rounded-2xl cardSize">
-          <img :src="showDetail?.image?.original" class="rounded-2xl shadow-xl" />
+          <img :src="showDetail?.image.original" class="rounded-2xl shadow-xl">
         </div>
 
         <div>
-          <h1 class="mt-4 text-4xl leading-10 sm:text-5xl font-extrabold tracking-tight text-slate-50">
-            {{ showDetail?.name }}
+          <h1 class="mt-4 text-4xl leading-10 sm:text-5xl font-extrabold tracking-tight text-slate-50">{{ showDetail?.name
+          }}
           </h1>
           <div class="flex items-center text-gray-400 space-x-6 mt-4">
+
             <!-- star rating-->
             <div class="flex items-center text-2xl">
               <div>
@@ -25,90 +28,116 @@
                   </path>
                 </svg>
               </div>
-              <div>{{ showDetail?.rating?.average }}</div>
+              <div>{{ showDetail?.rating.average }}</div>
             </div>
 
+
             <div>
-              <div class="flex items-center font-medium truncate flex-wrap -mt-1 -mr-1">
+              <div class="flex items-center font-medium  truncate flex-wrap -mt-1 -mr-1">
+
                 <div class="mt-1 mr-1 flex items-center" v-for="(genre, index) in showDetail?.genres" :key="index">
-                  {{ genre
-                  }}<span v-if="showDetail?.genres.length - 1 > index">,</span>
+                  {{ genre }}<span v-if="showDetail?.genres.length - 1 > index">,</span>
                 </div>
+
               </div>
             </div>
 
             <div class="border border-gray-700 text-sm font-medium rounded-full px-3 py-1">
               {{ showDetail?.status }}
             </div>
+
+
           </div>
 
-          <div class="text-2xl tracking-tight font-bold text-slate-200 mb-3 mt-10">
+          <div class="text-2xl tracking-tight font-bold mb-3 text-slate-200 mb-3 mt-10">
             Summary
           </div>
-          <div class="mt-4 max-w-3xl space-y-6 text-gray-400 prose" v-html="showDetail?.summary"></div>
+          <div class="mt-4 max-w-3xl space-y-6 text-gray-400 prose" v-html="showDetail?.summary">
+          </div>
+
+
+
+
+
         </div>
       </div>
       <div>
+
         <div>
-          <div class="text-2xl tracking-tight font-bold text-slate-200 mb-6 mt-20">
+          <div class="text-2xl tracking-tight font-bold mb-3 text-slate-200 mb-6 mt-20">
             Cast
           </div>
           <div class="flex items-center space-x-10 overflow-x-auto">
-            <div class="text-center" v-for="(person, index) in showDetail?._embedded?.cast.slice(0, 8)" :key="index">
-              <div class="w-14 h-14 rounded-full overflow-hidden mx-auto" v-if="person?.person?.image">
-                <img :src="person?.person?.image?.medium" />
+            <div class="text-center" v-for="(person, index) in showDetail?._embedded.cast.slice(0, 8)" :key="index">
+              <div class="w-14 h-14 rounded-full overflow-hidden mx-auto" v-if="person.person.image">
+                <img :src="person.person.image.medium">
               </div>
-              <div class="mt-3 truncate">{{ person?.person?.name }}</div>
-              <div class="text-xs mt-0.5 text-gray-400 truncate">
-                {{ person?.character?.name }}
-              </div>
+              <div class="mt-3 truncate">{{ person.person.name }}</div>
+              <div class="text-xs mt-0.5 text-gray-400 truncate">{{ person.character.name }}</div>
             </div>
           </div>
         </div>
 
+
+
         <div>
-          <div class="text-2xl tracking-tight font-bold text-slate-200 mb-3 mt-20">
+          <div class="text-2xl tracking-tight font-bold mb-6 text-slate-200 mb-3 mt-20">
             Episodes
           </div>
           <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left text-gray-400">
               <thead class="text-xs uppercase text-gray-400">
                 <tr class="border-t-1s border-b-2 border-gray-800">
-                  <th scope="col" class="px-2 py-3">Name</th>
-                  <th scope="col" class="px-2 py-3">Air date</th>
+                  <th scope="col" class="px-2 py-3">
+                    Name
+                  </th>
+                  <th scope="col" class="px-2 py-3">
+                    Air date
+                  </th>
+
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b border-gray-800" v-for="(
-                    episode, index
-                  ) in showDetail?._embedded?.episodes.slice(0, 15)" :key="index">
-                  <th scope="row" class="px-2 py-4 font-medium whitespace-nowrap text-white">
-                    {{ episode?.name }}
+                <tr class="border-b border-gray-800"
+                  v-for="(episode, index) in showDetail?._embedded.episodes.slice(0, 15)" :key="index">
+                  <th scope="row" class="px-2 py-4 font-medium  whitespace-nowrap text-white">
+                    {{ episode.name }}
                   </th>
                   <td class="py-4">
-                    {{ episode?.airdate }}
+                    {{ episode.airdate }}
                   </td>
+
                 </tr>
+
+
               </tbody>
             </table>
           </div>
         </div>
+
+
+
       </div>
     </div>
+
+
+
+
   </div>
 </template>
 
 <script>
+
 import Loader from "@/components/Loader.vue";
-import { getShowDetails } from "../services/service";
+import { getShowDetails } from '../services/service'
 
 export default {
   components: { Loader },
   data() {
     return {
       showDetail: null,
-      fetchingShowDetail: false,
-    };
+      fetchingShowDetail: false
+    }
   },
   mounted() {
     this.fetchShowDetail(this.$route.params.id);
@@ -116,22 +145,22 @@ export default {
   methods: {
     async fetchShowDetail(id) {
       try {
-        this.fetchingShowDetail = true;
+        this.fetchingShowDetail = true
         const response = await getShowDetails(id);
-        console.log('response', response)
         this.showDetail = response.data;
         this.fetchingShowDetail = false;
       } catch (error) {
         console.log(error);
       }
     },
-  },
-};
+  }
+}
 </script>
+
 
 <style>
 .cardSize {
   width: 320px;
-  height: 471px;
+  height: 471px
 }
 </style>
