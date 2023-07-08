@@ -35,10 +35,10 @@
             <div>
               <div class="flex items-center font-medium  truncate flex-wrap -mt-1 -mr-1">
 
-                <div class="mt-1 mr-1 flex items-center" v-for="(genre, index) in showDetail?.genres" :key="index">
+                <!-- <div class="mt-1 mr-1 flex items-center" v-for="(genre, index) in showDetail?.genres" :key="index">
                   {{ genre }}<span v-if="showDetail?.genres.length - 1 > index">,</span>
-                </div>
-
+                </div> -->
+                <maze-genre :genres="showDetail?.genres"></maze-genre>
               </div>
             </div>
 
@@ -49,7 +49,7 @@
 
           </div>
 
-          <div class="text-2xl tracking-tight font-bold mb-3 text-slate-200 mb-3 mt-10">
+          <div class="text-2xl tracking-tight font-bold mb-3 text-slate-200 mt-10">
             Summary
           </div>
           <div class="mt-4 max-w-3xl space-y-6 text-gray-400 prose" v-html="showDetail?.summary">
@@ -63,7 +63,7 @@
       </div>
       <div>
 
-        <div>
+        <!-- <div>
           <div class="text-2xl tracking-tight font-bold mb-3 text-slate-200 mb-6 mt-20">
             Cast
           </div>
@@ -76,11 +76,11 @@
               <div class="text-xs mt-0.5 text-gray-400 truncate">{{ person.character.name }}</div>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
 
-        <div>
+        <!-- <div>
           <div class="text-2xl tracking-tight font-bold mb-6 text-slate-200 mb-3 mt-20">
             Episodes
           </div>
@@ -114,8 +114,10 @@
             </table>
           </div>
         </div>
-
-
+        
+ -->
+        <maze-cast :casts="showDetail?._embedded.cast"></maze-cast>
+        <maze-episodes :episodes="showDetail?._embedded.episodes"></maze-episodes>
 
       </div>
     </div>
@@ -129,10 +131,13 @@
 <script>
 
 import Loader from "@/components/Loader.vue";
+import MazeGenre from '@/components/Genre.vue';
+import MazeCast from '@/components/Cast.vue'
+import MazeEpisodes from '@/components/Episodes.vue'
 import { getShowDetails } from '../services/service'
 
 export default {
-  components: { Loader },
+  components: { Loader, MazeGenre, MazeCast, MazeEpisodes },
   data() {
     return {
       showDetail: null,
