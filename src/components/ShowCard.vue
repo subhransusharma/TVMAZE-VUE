@@ -3,7 +3,7 @@
     class="w-36 bg-cover bg-center rounded-xl overflow-hidden group hover:bg-gray-800  hover:shadow cursor-pointer p-2 transition duration-150 ease-in-out">
     <div class="relative">
       <div v-if="show.rating.average"
-        class="absolute top-2 right-1 group-hover:bg-opacity-80 bg-gray-900 bg-opacity-50 rounded-full text-xs font-semibold z-10 px-1.5 py-0.5">
+        class="average absolute top-2 right-1 group-hover:bg-opacity-80 bg-gray-900 bg-opacity-50 rounded-full text-xs font-semibold z-10 px-1.5 py-0.5">
         <div class="flex items-center">
           <svg fill="currentColor" class="h-4 w-4 text-yellow-500 -ml-0.5 mr-1" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
