@@ -14,11 +14,8 @@ import FooterBar from "@/components/FooterBar.vue";
 
 export default {
   name: 'App',
-  components: {FooterBar, NavBar},
+  components: { FooterBar, NavBar },
 }
 </script>
 
-<style>
-
-
-</style>
+<style></style>
